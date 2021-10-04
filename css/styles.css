@@ -21,6 +21,10 @@ title {
     letter-spacing: 2px;
 }
 
+h1 {
+    font-size: 1.7em;
+}
+
 h1,
 h2,
 h3,
@@ -29,6 +33,7 @@ h4 {
 }
 
 p {
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -69,9 +74,12 @@ ul {
     margin: 0;
 }
 
-section {
+section,
+aside {
     padding: 10px 15px;
     border-bottom: 3px solid black;
+    background-color: #ececec;
+
 }
 
 footer {
@@ -90,10 +98,17 @@ footer a {
     font-weight: 500;
     font-size: 12px;
     background-color: rgb(231, 74, 74);
+    text-shadow: 10px 10px 20px #000000;
     padding: 2px 5px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     border-radius: 5px;
     align-self: flex-start;
+}
+
+.newsCard  p, 
+.newsCard .title a  {
+    text-shadow: 10px 10px 20px #000000;
+    color: #ffffff;
 }
 
 /*--------------- Header Properties-----------------*/
@@ -125,7 +140,6 @@ footer a {
     color: #ffffff;
 }
 
-
 nav .search {
     align-items: center;
     display: flex;
@@ -140,22 +154,21 @@ nav .search {
     background-color: #ececec;
 }
 
-.principalNews {
+.hottestNewsContainer .principalNews {
     width: 100%;
     /* tamanio para tablet y desktop */
 }
 
-.newsCard {
+.hottestNewsContainer .principalNews .newsCard {
+    background-image: url(/assets/images/facebook-down.jpg);
+    background-size: cover;
+    background-position: center;
     border: 1px solid black;
     background-color: white;
     display: flex;
     flex-direction: column;
     padding: 15px;
 }
-
-.newsCard a {
-}
-
 .secondaryNews {
     display: flex;
     flex-wrap: wrap;
@@ -163,11 +176,10 @@ nav .search {
 
 /*---------------Section Trending News Properties-----------------*/
 .trendingNews {
-    background-color: lightsalmon;
+    background-color: #ececec;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
 }
 
 .trendingNewsWrapper {
