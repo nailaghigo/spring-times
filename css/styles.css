@@ -1,0 +1,202 @@
+/*--------------- General Properties-----------------*/
+header {
+    width: 100%;
+    height: auto;
+    background-color: rgba(42, 129, 129, 0.747);
+    border: 1px solid grey;
+    text-align: center;
+}
+
+title {
+    display: block;
+    text-align: center;
+    align-content: center;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+section {
+    padding: 10px 15px;
+    border-bottom: 3px solid black;
+}
+
+footer {
+    background-color: black;
+    color:white;
+    padding: 30px;
+}
+
+footer a {
+    color: white;
+}
+
+/*--------------- Header Properties-----------------*/
+.headerBar {
+    background-color: rgb(105, 104, 104);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.socialMedia {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*--------------- Section Hottes News Properties-----------------*/
+.hottestNewsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(212, 183, 240);
+}
+
+.principalNews {
+    width: 100%;
+    /* tamanio para tablet y desktop */
+}
+
+.newsCard {
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondaryNews {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*---------------Section Trending News Properties-----------------*/
+.trendingNews {
+    background-color: lightsalmon;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.trendingNewsWrapper {
+    width: 100%;
+    order: 2;
+}
+
+.adv {
+    order: 1;
+    margin: 15px 0;
+    width: 75%;
+    background-color: lightslategrey;
+    border: 1px solid black;
+}
+
+/*---------------Section Latests News Properties-----------------*/
+.listWrapper {
+    border: 1px solid gray;
+    padding: 10px 20px;
+    width: auto;
+}
+
+.newsMiniCard {
+    /* to do */
+}
+
+/*---------------Footer Properties-----------------*/
+.newsletter button {
+    background-color: #266fef;
+    font-size: 14px;
+    padding: 3px 18px;
+    border: none;
+    color: white;
+}
+
+.footerSections {
+    display: flex;
+    flex-direction: column;
+}
+
+.categories ul,
+.footerSMedia ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------Media Queries for Tablets-----------------*/
+@media screen and (min-width: 768px) {
+
+    .secondaryNews .newsCard {
+        width: 50%;
+        background-color: blue;
+        display: flex;
+        flex-wrap: wrap;        
+    }
+
+    .trendingNewsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        order: initial;
+    }
+    .trendingNewsWrapper .newsCard {
+        width: 50%;
+    }
+    
+    .adv {
+        /* cambiar foto */
+    }
+
+    .footerSections{
+        flex-direction: row;
+    }
+}
+
+/*---------------Media Queries for Desktop-----------------*/
+@media screen and (min-width: 1024px) {
+    .hottestNewsContainer {
+        flex-direction: row;    
+    }
+
+    .principalNews {
+        display: flex;
+        width: 50%;
+    }
+
+    .secondaryNews {
+        width: 50%;
+        flex-direction: row;
+    }
+
+    .secondaryNews .newsCard {
+        background-color: blue;
+    }
+
+    .trendingNewsWrapper {
+        width: 65%;
+    }
+
+    .adv {
+        width: 35%;
+        display: flex;
+    }
+}
