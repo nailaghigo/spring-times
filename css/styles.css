@@ -1,3 +1,7 @@
+/*--------------- Fonts-----------------*/
+/* font-family: 'Bree Serif', serif; */
+/* font-family: 'Montserrat', sans-serif; */
+
 /*--------------- General Properties-----------------*/
 header {
     width: 100%;
@@ -12,7 +16,20 @@ title {
     text-align: center;
     align-content: center;
     padding: 10px 0;
-    font-size: 30px;
+    font-size: 45px;
+    font-family: 'Bree Serif', serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Bree Serif', serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 nav {
@@ -46,6 +63,12 @@ footer {
 
 footer a {
     color: white;
+}
+
+.topic {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }
 
 /*--------------- Header Properties-----------------*/
@@ -113,10 +136,24 @@ footer a {
 }
 
 /*---------------Section Latests News Properties-----------------*/
-.listWrapper {
+.latestNews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whatsNew {
+    width: 100%;
+}
+
+.whatsNewListWrapper {
     border: 1px solid gray;
     padding: 10px 20px;
-    width: auto;
+    width: 100%;
+}
+
+.whatsNewListWrapper a {
+    font-family: 'Bree Serif', serif;
 }
 
 .newsMiniCard {
