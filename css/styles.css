@@ -85,9 +85,15 @@ footer a {
 }
 
 .topic {
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 12px;
+    background-color: rgb(231, 74, 74);
+    padding: 2px 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    align-self: flex-start;
 }
 
 /*--------------- Header Properties-----------------*/
@@ -131,7 +137,7 @@ nav .search {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(212, 183, 240);
+    background-color: #ececec;
 }
 
 .principalNews {
@@ -144,6 +150,10 @@ nav .search {
     background-color: white;
     display: flex;
     flex-direction: column;
+    padding: 15px;
+}
+
+.newsCard a {
 }
 
 .secondaryNews {
@@ -223,7 +233,6 @@ nav .search {
 
     .secondaryNews .newsCard {
         width: 50%;
-        background-color: blue;
         display: flex;
         flex-wrap: wrap;        
     }
@@ -260,10 +269,6 @@ nav .search {
     .secondaryNews {
         width: 50%;
         flex-direction: row;
-    }
-
-    .secondaryNews .newsCard {
-        background-color: blue;
     }
 
     .trendingNewsWrapper {
