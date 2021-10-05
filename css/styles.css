@@ -6,19 +6,19 @@
 header {
     width: 100%;
     height: auto;
-    background-color: #000000;
-    text-align: center;
     color:#ffffff;
+    text-align: center;
+    background-color: #000000;
 }
 
 title {
     display: block;
-    text-align: center;
     align-content: center;
     padding: 20px 0;
+    text-align: center;
+    letter-spacing: 2px;
     font-size: 45px;
     font-family: 'Bree Serif', serif;
-    letter-spacing: 2px;
 }
 
 h1 {
@@ -41,8 +41,8 @@ p {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 15px;
     align-items: center;
+    padding: 20px 15px;
 }
 
 input {
@@ -54,24 +54,24 @@ input {
 }
 
 button {
-    background-color: #266fef;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
-    color: #ffffff;
     font-size: 12px;
+    background-color: #266fef;
+    color: #ffffff;
 }
 
 a {
-    text-decoration: none;
     color: black;
+    text-decoration: none;
 }
 
 ul {
-    list-style: none;
     display: flex;
     flex-direction: row;
     margin: 0;
+    list-style: none;
 }
 
 section,
@@ -82,9 +82,9 @@ aside {
 }
 
 footer {
-    background-color: black;
-    color:white;
     padding: 30px;
+    background-color: black;
+    color: #ffffff;
 }
 
 footer a {
@@ -92,23 +92,23 @@ footer a {
 }
 
 .topic {
+    padding: 2px 5px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    border-radius: 5px;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 12px;
-    background-color: rgb(231, 74, 74);
     text-shadow: 10px 10px 20px #000000;
-    padding: 2px 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    align-self: flex-start;
+    background-color: rgb(231, 74, 74);
 }
 
 .newsCard {
-    border-bottom: 1px solid black;
     display: flex;
     flex-direction: column;
     padding: 15px;
+    border-bottom: 1px solid black;
 }
 
 .newsCard  p, 
@@ -124,14 +124,14 @@ footer a {
 
 /*--------------- Header Properties-----------------*/
 .headerBar {
-    color: #ffffff;
     display: flex;
-    font-size: 12px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 8px 20px;
     border-bottom: 1px solid #6d6d6d;
+    color: #ffffff;
+    font-size: 12px;
 }
 
 .headerBar time {
@@ -141,10 +141,10 @@ footer a {
 }
 
 .headerBar .socialMedia {
-    width: auto;
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    width: auto;
 }
 
 .headerBar .socialMedia a {
@@ -152,9 +152,17 @@ footer a {
 }
 
 nav .search {
-    align-items: center;
     display: flex;
+    align-items: center;
     gap: 5px;
+}
+
+nav .menuList {
+    display: none;
+}
+
+nav .menuBtn {
+    display: block;
 }
 
 /*--------------- Section Hottes News Properties-----------------*/
@@ -171,12 +179,12 @@ nav .search {
 }
 
 .hottestNewsContainer .principalNews .newsCard {
-    height: 100%;
     justify-content: space-between;
+    height: 100%;
 }
 
 .img1 {
-    background-image: url(/assets/images/facebook-down.jpg);
+    background-image: url(../assets/images/facebook-down.jpg);
 }
 
 .secondaryNews {
@@ -185,8 +193,8 @@ nav .search {
 }
 
 .hottestNewsContainer .secondaryNews .newsCard {
-    height: 250px;
     justify-content: space-between;
+    height: 250px;
 }
 
 .img2 {
@@ -207,10 +215,10 @@ nav .search {
 
 /*---------------Section Trending News Properties-----------------*/
 .trendingNews {
-    background-color: #ececec;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ececec;
 }
 
 .trendingNewsWrapper {
@@ -218,31 +226,31 @@ nav .search {
     order: 2;
 }
 .trendingNewsWrapper .newsCard {
-    height: 250px;
     justify-content: space-between;
+    height: 250px;
 }
 
 .adv {
-    order: 1;
     margin: 15px 0;
+    order: 1;
 }
 
 .adv.banner {
     width: 75%;
+    height: 200px;
     background-image: url(../assets/images/banner.png);
     background-size: cover;
     background-position: center;
-    height: 200px;
 }
 
 .adv.square {
     min-width: 200px;
     max-width: 350px;
+    min-height: 200px;
+    max-height: 350px;
     background-image: url(../assets/images/square.png);
     background-size: cover;
     background-position: center;
-    min-height: 200px;
-    max-height: 350px;
 }
 
 .img6 {
@@ -262,6 +270,13 @@ nav .search {
 }
 
 /*---------------Section Latests News Properties-----------------*/
+.latestsNewsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
 .latestNews {
     display: flex;
     flex-direction: column;
@@ -279,10 +294,10 @@ nav .search {
 }
 
 .whatsNew {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
     background-color: #ffffff;
 }
 
@@ -302,31 +317,49 @@ nav .search {
 }
 
 .newsMiniCard .orderNumber {
-    margin-right: 10px;
-    background-color: #266fef;
-    color: #ffffff;
     padding: 5px 10px;
+    margin-right: 10px;
     border-radius: 5px;
+    color: #ffffff;
+    background-color: #266fef;
 }
 
 /*---------------Footer Properties-----------------*/
-.newsletter button {
-    background-color: #266fef;
-    font-size: 14px;
-    padding: 3px 18px;
-    border: none;
-    color: white;
+.footerTitle {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #266fef;
+    font-family: 'Bree Serif', serif;
+    font-size: 26px;
 }
 
 .footerSections {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-.categories ul,
-.footerSMedia ul {
+.footerInfo,
+.footerInfo ul {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.newsletter button {
+    padding: 3px 18px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    background-color: #266fef;
 }
 
 .adv.square {
@@ -337,9 +370,9 @@ nav .search {
 @media screen and (min-width: 768px) {
 
     .secondaryNews .newsCard {
-        width: 50%;
         display: flex;
         flex-wrap: wrap;        
+        width: 50%;
     }
 
     .trendingNewsWrapper {
@@ -347,6 +380,7 @@ nav .search {
         flex-wrap: wrap;
         order: initial;
     }
+
     .trendingNewsWrapper .newsCard {
         width: 50%;
     }
@@ -354,10 +388,35 @@ nav .search {
     .footerSections{
         flex-direction: row;
     }
+
+    .newsletter {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 /*---------------Media Queries for Desktop-----------------*/
 @media screen and (min-width: 1024px) {
+    nav .menuBtn {
+        display: none;
+    }
+    
+    nav .menuList {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+    
+    nav .menuList a {
+        color: #ffffff;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    nav .menuList a:hover {
+        color: #266fef;
+    }
+    
     .hottestNewsContainer {
         flex-direction: row;    
     }
@@ -373,8 +432,8 @@ nav .search {
     }
 
     .hottestNewsContainer .secondaryNews {
-        width: 50%;
         flex-direction: row;
+        width: 50%;
     }
     
     .hottestNewsContainer .secondaryNews .newsCard {
@@ -393,8 +452,30 @@ nav .search {
         width: 65%;
     }
 
-    .adv {
-        width: 35%;
-        display: flex;
+    .whatsNew {
+        width: 33.33%;
+    }
+
+    .adv.square{
+        width: 33.33%;
+        min-height: 320px;
+    }
+
+    .adv.banner {
+        height: 300px;
+    }
+
+    .latestsNewsContainer {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 15px;
+    }
+
+    .latestNews {
+        width: 33.33%;
+    }
+
+    footer {
+        padding: 100px;
     }
 }
