@@ -218,6 +218,10 @@ nav .search {
     width: 100%;
     order: 2;
 }
+.trendingNewsWrapper .newsCard {
+    height: 250px;
+    justify-content: space-between;
+}
 
 .adv {
     order: 1;
