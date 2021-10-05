@@ -100,15 +100,27 @@ footer a {
     background-color: rgb(231, 74, 74);
     text-shadow: 10px 10px 20px #000000;
     padding: 2px 5px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     border-radius: 5px;
     align-self: flex-start;
+}
+
+.newsCard {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 }
 
 .newsCard  p, 
 .newsCard .title a  {
     text-shadow: 10px 10px 20px #000000;
     color: #ffffff;
+}
+
+.bImage {
+    background-size: cover;
+    background-position: center;
 }
 
 /*--------------- Header Properties-----------------*/
@@ -155,23 +167,43 @@ nav .search {
 }
 
 .hottestNewsContainer .principalNews {
+    height: 350px;
     width: 100%;
-    /* tamanio para tablet y desktop */
 }
 
 .hottestNewsContainer .principalNews .newsCard {
-    background-image: url(/assets/images/facebook-down.jpg);
-    background-size: cover;
-    background-position: center;
-    border: 1px solid black;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
+    height: 100%;
+    justify-content: space-between;
 }
+
+.img1 {
+    background-image: url(/assets/images/facebook-down.jpg);
+}
+
 .secondaryNews {
     display: flex;
     flex-wrap: wrap;
+}
+
+.hottestNewsContainer .secondaryNews .newsCard {
+    height: 250px;
+    justify-content: space-between;
+}
+
+.img2 {
+    background-image: url(../assets/images/malaysia.jpg);
+}
+
+.img3 {
+    background-image: url(../assets/images/britney.jpg);
+}
+
+.img4 {
+    background-image: url(../assets/images/messi.jpg);
+}
+
+.img5 {
+    background-image: url(../assets/images/binance.jpg);
 }
 
 /*---------------Section Trending News Properties-----------------*/
@@ -195,19 +227,47 @@ nav .search {
     border: 1px solid black;
 }
 
+.img6 {
+    background-image: url(../assets/images/economy.jpg);
+}
+
+.img7 {
+    background-image: url(../assets/images/sleep.jpg);
+}
+
+.img8 {
+    background-image: url(../assets/images/earth.jpg);
+}
+
+.img9 {
+    background-image: url(../assets/images/billie.jpg);
+}
+
 /*---------------Section Latests News Properties-----------------*/
 .latestNews {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffffff;
+}
+
+.latestNewsWrapper .topic {
+    text-shadow: none;
+}
+
+.latestNewsWrapper .newsCard .title a {
+    color: #000000;
+    text-shadow: none;
 }
 
 .whatsNew {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .whatsNewListWrapper {
-    border: 1px solid gray;
     padding: 10px 20px;
     width: 100%;
 }
@@ -217,7 +277,17 @@ nav .search {
 }
 
 .newsMiniCard {
-    /* to do */
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.newsMiniCard .orderNumber {
+    margin-right: 10px;
+    background-color: #266fef;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 /*---------------Footer Properties-----------------*/
