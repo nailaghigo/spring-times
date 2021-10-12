@@ -9,3 +9,10 @@ https://nailaghigo.github.io/spring-times/
 
 - Github Repository:
 https://github.com/nailaghigo/spring-times
+
+## Execute
+ 
+For this project you only need to download the repository and run it at local. Open index.html with your browser. Try to resize browser window to see media queries changes and flexbox components behaviour. 
+
+## Created by
+**Naila Ghigo**
