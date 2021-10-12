@@ -19,6 +19,7 @@ title {
     letter-spacing: 2px;
     font-size: 45px;
     font-family: 'Bree Serif', serif;
+    text-shadow: 2px 2px 3px #d1d1d1;
 }
 
 h1 {
@@ -109,6 +110,7 @@ footer a {
     flex-direction: column;
     padding: 15px;
     border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
 
 .newsCard  p, 
@@ -174,6 +176,7 @@ nav .menuBtn {
 }
 
 .hottestNewsContainer .principalNews {
+    margin-bottom: 10px;
     height: 350px;
     width: 100%;
 }
@@ -368,8 +371,12 @@ nav .menuBtn {
 }
 /*---------------Media Queries for Tablets-----------------*/
 @media screen and (min-width: 768px) {
+    .hottestNewsContainer .principalNews {
+        margin-bottom: 0;
+    }
 
     .secondaryNews .newsCard {
+        margin-bottom: 0;
         display: flex;
         flex-wrap: wrap;        
         width: 50%;
@@ -383,6 +390,7 @@ nav .menuBtn {
 
     .trendingNewsWrapper .newsCard {
         width: 50%;
+        margin-bottom: 0;
     }
     
     .footerSections{
@@ -397,6 +405,10 @@ nav .menuBtn {
 
 /*---------------Media Queries for Desktop-----------------*/
 @media screen and (min-width: 1024px) {
+    nav {
+        padding: 30px 50px;
+    }
+
     nav .menuBtn {
         display: none;
     }
@@ -451,6 +463,14 @@ nav .menuBtn {
     .trendingNewsWrapper {
         width: 65%;
     }
+    
+    .trendingNewsWrapper .titleWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+    }
+    
 
     .whatsNew {
         width: 33.33%;
@@ -477,5 +497,10 @@ nav .menuBtn {
 
     footer {
         padding: 100px;
+    }
+
+    .title a:hover,
+    .title a:hover {
+        color: #266fef;
     }
 }
