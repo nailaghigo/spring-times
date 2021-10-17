@@ -402,7 +402,6 @@ nav .menuBtn {
         justify-content: center;
     }
 }
-
 /*---------------Media Queries for Desktop-----------------*/
 @media screen and (min-width: 1024px) {
     nav {
