@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Subscribe to Newsletter</title><link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/subscription.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="headerBar">
+                <!-- date -->
+                <time datetime="2021-10-01T16:15:29-0400">
+                    <i class="fas fa-sun"></i> October 1st.
+                </time>
+                <!-- Social Media -->
+                <div class="socialMedia">
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://Youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <title>Spring Times</title>
+            <nav>
+                <div class="search">
+                    <input type="text" placeholder="Find News">
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menuList">
+                    <li>
+                        <a href="#">Economy</a>
+                    </li>
+                    <li>
+                        <a href="#">Politics</a>
+                    </li>
+                    <li>
+                        <a href="#">Technology</a>
+                    </li>
+                    <li>
+                        <a href="#">Co-Vid</a>
+                    </li>
+                    <li>
+                        <a href="#">Sports</a>
+                    </li>
+                    <li>
+                        <a href="#">Arts</a>
+                    </li>
+                    <li>
+                        <a href="#">Entretainment</a>
+                    </li>
+                    <li>
+                        <a href="#">Culture</a>
+                    </li>
+                    <li>
+                        <a href="#">Bussiness</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Subscription Form -->
+        <section>
+            <div class="subscriptionContainer">
+                <h2 class="title">Subscribe to our Newsletter for FREE!</h2>
+                <form class="subscriptionWrapper">
+                    <!-- First and Last Name -->
+                    <div class="inputBlock">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="fullName" id="fullName" value="" placeholder="John Doritos" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Email -->
+                    <div class="inputBlock">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" value="" placeholder="john_doritos@gmail.com" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Password -->
+                    <div class="inputBlock">
+                        <label for="password">Password</label>
+                        <input type="password"  name="pwd" id="pwd" value="" placeholder="RandomPwd123" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Repeat Password -->
+                    <div class="inputBlock">
+                        <label for="repeatPsw">Repeat Password</label>
+                        <input type="password" name="repeatPwd" id="repeatPwd" value="" placeholder="RandomPwd123" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Age -->
+                    <div class="inputBlock">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" id="age" value="" placeholder="28" maxlength="3" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="inputBlock">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" value="" placeholder="1124345555" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Address -->
+                    <div class="inputBlock">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" value="" placeholder="P Sherman Wallaby 42" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- City -->
+                    <div class="inputBlock">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" value="" placeholder="Sidney" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Postal Code -->
+                    <div class="inputBlock">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" name="postalCode" id="postalCode" value="" placeholder="2006" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- ID Number -->
+                    <div class="inputBlock">
+                        <label for="iDNumber">ID Number</label>
+                        <input type="number" name="iDNumber" id="iDNumber" value="" placeholder="37208022" required>
+                        <div class="validationMessage">Error</div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="submitBttn">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footerTitle">
+                Spring Times
+            </div>
+            <div class="footerSections">
+                <div class="footerInfo">
+                    <h4>Category</h4>
+                    <ul>
+                        <li>
+                            <a href="#">Politics</a>
+                        </li>
+                        <li>
+                            <a href="#">Economics</a>
+                        </li>
+                        <li>
+                            <a href="#">Culture</a>
+                        </li>
+                        <li>
+                            <a href="#">Technologies</a>
+                        </li>
+                        <li>
+                            <a href="#">Etretainment</a>
+                        </li>
+                        <li>
+                            <a href="#">Sports</a>
+                        </li>
+                        <li>
+                            <a href="#">Music</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footerInfo">
+                    <h4>Stay connected</h4>
+                    <ul>
+                        <li>
+                            <a href="https://facebook.com">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://Youtube.com">
+                                <i class="fab fa-youtube"></i> Youtube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>

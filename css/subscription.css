@@ -1,0 +1,78 @@
+.subscriptionContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.subscriptionContainer .title {
+    margin-bottom: 40px;
+}
+
+.subscriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 90%;
+    border: 1px solid #266fef;
+}
+
+.subscriptionWrapper .inputBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subscriptionWrapper .inputBlock input {
+    width: 100%;
+    font-size: 16px;
+}
+
+.subscriptionWrapper .inputBlock label {
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.subscriptionWrapper .inputBlock .validationMessage {
+    display: none;
+}
+
+.subscriptionWrapper button {
+    margin: 25px 0;
+    font-size: 18px;
+}
+/*---------------Media Queries for Tablets-----------------*/
+@media screen and (min-width: 768px) {
+    .subscriptionWrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .subscriptionWrapper .inputBlock {
+        width: 45%;
+    }
+
+    .subscriptionWrapper .submitBttn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .subscriptionWrapper .submitBttn button {
+        padding: 5px 40px;
+    }
+}
+/*---------------Media Queries for Desktop-----------------*/
+@media screen and (min-width: 1024px) {
+    .subscriptionContainer .title {
+        font-size: 32px;
+    }
+    .subscriptionWrapper {
+        width: 45%;
+    }
+}
