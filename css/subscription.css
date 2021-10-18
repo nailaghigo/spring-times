@@ -38,7 +38,7 @@
 }
 
 .subscriptionWrapper .inputBlock .validationMessage {
-    display: none;
+    height: 25px;
 }
 
 .subscriptionWrapper button {
