@@ -1,3 +1,7 @@
+a title {
+    color: #ffffff;
+}
+
 .subscriptionContainer {
     display: flex;
     align-items: center;
@@ -39,6 +43,8 @@
 
 .subscriptionWrapper .inputBlock .validationMessage {
     height: 25px;
+    color: #d64c4c;
+    padding-top: 5px;
 }
 
 .subscriptionWrapper button {
