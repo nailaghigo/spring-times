@@ -3,15 +3,36 @@ const regLettersAndNumbers = /^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]+$/;
 const regAddress = /^(?=.*?\d)(?=.*?[a-zA-Z\s])[a-zA-Z\d\s]+$/;
 const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
+const errorMessages = [
+    'Full Name should contain at least 6 characters',
+    'Full Name should contain at least one space',
+    'Invalid email format',
+    'Password is not long enough',
+    'Password has to include only letters and numbers',
+    'Passwords do not match',
+    'Only +18 to -100 can subscribe',
+    'Phone number should have at least 7 digits',
+    'Address should have at least 5 characters',
+    'Address should contain letters and numbers',
+    'Address should contain at least one space',
+    'City should have at least 3 characters',
+    'Postal Code should have at least 3 characters',
+    'ID Number should have 7 or 8 characters'
+]
+
 // General Functions
-function displayError (id, message) {
+function displayError (id, messageId) {
     var validationMsgDiv = document.getElementById(`${id}Message`);
-    validationMsgDiv.innerHTML = message;
+    validationMsgDiv.innerHTML = errorMessages[messageId];
+    var input = document.getElementById(id);
+    input.classList.add('redInputBorder')
 }
 
 function hideError(id) {
     var validationMsgDiv = document.getElementById(`${id}Message`);
     validationMsgDiv.innerHTML = '';
+    var input = document.getElementById(id);
+    input.classList.remove('redInputBorder')
 }
 
 // ----------------
@@ -19,15 +40,15 @@ function hideError(id) {
 // ----------------
 function onBlurFullName (field, id) {
     if (field.value.length < 6) {
-        displayError(id, 'Full Name should contain at least 6 characters')
-        fieldsError[0] = true;
+        displayError(id, 0)
+        fieldsError[0].push(errorMessages[0]);
 
     } else if (field.value.indexOf(' ') === -1){
-        displayError(id, 'Full Name should contain at least one space')
-        fieldsError[0] = true;
+        displayError(id, 1)
+        fieldsError[0].push(errorMessages[1]);
 
     } else {
-        fieldsError[0] = false;
+        fieldsError[0] = [];
     }
 }
 
@@ -41,11 +62,11 @@ email.addEventListener('keyup', function(){
 
 function onBlurEmail (field, id) {
     if (!regEmail.test(String(field.value).toLowerCase())) {
-        displayError(id, 'Invalid email format');
-        fieldsError[1] = true;
+        displayError(id, 2);
+        fieldsError[1].push(errorMessages[2]);
 
     } else {
-        fieldsError[1] = false;
+        fieldsError[1] = [];
     }
 }
 
@@ -54,15 +75,15 @@ function onBlurEmail (field, id) {
 // --------------------
 function onBlurPwd (field, id) {
     if (field.value.length < 8) {
-        displayError(id, 'Password is not long enough');
-        fieldsError[2] = true;
+        displayError(id, 3);
+        fieldsError[2].push(errorMessages[3]);
 
     } else if (!regLettersAndNumbers.test(field.value)){
-        displayError(id, 'Password has to include only letters and numbers');
-        fieldsError[2] = true;
+        displayError(id, 4);
+        fieldsError[2].push(errorMessages[4]);
 
     } else {
-        fieldsError[2] = false;
+        fieldsError[2] = [];
     }
 }
 
@@ -72,11 +93,11 @@ function onBlurPwd (field, id) {
 function onBlurRepeatPwd (field, id) {
     var pwd = document.getElementById('pwd');
     if (field.value !== pwd.value) {
-        displayError(id, 'Passwords do not match')
-        fieldsError[3] = true;
+        displayError(id, 5)
+        fieldsError[3].push(errorMessages[5]);
 
     } else {
-        fieldsError[3] = false;
+        fieldsError[3] = [];
     }
 }
 
@@ -86,18 +107,18 @@ function onBlurRepeatPwd (field, id) {
 var age = document.getElementById('age');
 age.addEventListener('keydown', function(e){
 
-    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ','){
+    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ','  || e.key === 'e'){
         e.preventDefault();
     }
 });
 
 function onBlurAge (field, id) {
     if (field.value < 18 || field.value > 100){
-        displayError(id, 'Only +18 to -100 can subscribe');
-        fieldsError[4] = true;
+        displayError(id, 6);
+        fieldsError[4].push(errorMessages[6]);
 
     } else {
-        fieldsError[4] = false;
+        fieldsError[4] = [];
     }
 }
 
@@ -107,18 +128,18 @@ function onBlurAge (field, id) {
 var phone = document.getElementById('phone');
 phone.addEventListener('keydown', function(e){
 
-    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',' ){
+    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',' || e.key === 'e'){
         e.preventDefault();
     }
 });
 
 function onBlurPhone (field, id) {
     if(field.value.length < 7){
-        displayError(id, 'Phone number should have at least 7 digits');
-        fieldsError[5] = true;
+        displayError(id, 7);
+        fieldsError[5].push(errorMessages[7]);
 
     } else {
-        fieldsError[5] = false;
+        fieldsError[5] = [];
     }
 }
 
@@ -127,19 +148,19 @@ function onBlurPhone (field, id) {
 // -------------------
 function onBlurAddress (field, id) {
     if (field.value.length < 5){
-        displayError(id, 'Address should have at least 5 characters');
-        fieldsError[6] = true;
+        displayError(id, 8);
+        fieldsError[6].push(errorMessages[8]);
 
     } else if (!regAddress.test(field.value)){
-        displayError(id, 'Address should contain letters and numbers');
-        fieldsError[6] = true;
+        displayError(id, 9);
+        fieldsError[6].push(errorMessages[9]);
 
     } else if (field.value.indexOf(' ') === -1){
-        displayError(id, 'Address should contain at least one space');
-        fieldsError[6] = true;
+        displayError(id, 10);
+        fieldsError[6].push(errorMessages[10]);
 
     } else {
-        fieldsError[6] = false;
+        fieldsError[6] = [];
     }
 }
 
@@ -148,11 +169,11 @@ function onBlurAddress (field, id) {
 // ----------------
 function onBlurCity (field, id) {
     if (field.value.length < 3){
-        displayError(id, 'City should have at least 3 characters');
-        fieldsError[7] = true;
+        displayError(id, 11);
+        fieldsError[7].push(errorMessages[11]);
 
     } else {
-        fieldsError[7] = false;
+        fieldsError[7] = [];
     }
 }
 
@@ -161,31 +182,38 @@ function onBlurCity (field, id) {
 // -----------------------
 function onBlurPostalCode(field, id){
     if (field.value.length < 3){
-        displayError(id, 'Postal Code should have at least 3 characters');
-        fieldsError[8] = true;
+        displayError(id, 12);
+        fieldsError[8].push(errorMessages[12]);
 
     } else {
-        fieldsError[8] = false;
+        fieldsError[8] = [];
     }
 }
 
 // ---------------------
 // ID Number Validation
 // ---------------------
+var idNumber = document.getElementById('idNumber');
+idNumber.addEventListener('keydown', function(e){
+
+    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',' || e.key === 'e'){
+        e.preventDefault();
+    }
+});
 function onBlurIdNumber (field, id) {
     if (field.value.length < 7 ||
         field.value.length > 8){
-        displayError(id, 'ID Number should have 7 or 8 characters');
-        fieldsError[9] = true;
+        displayError(id, 13);
+        fieldsError[9].push(errorMessages[13]);
 
     } else {
-        fieldsError[9] = false;
+        fieldsError[9] = [];
     }
 }
 
-// -----------
+// ------------
 // Fields List
-// -----------
+// ------------
 const fieldsArray = [
     'fullName',
     'email',
@@ -224,5 +252,47 @@ fieldsArray.forEach(function (fieldId, index) {
         hideError(fieldId);
     });
 
-    fieldsError.push(false);
+    fieldsError.push([]);
 })
+
+// -------
+// Submit
+// -------
+var subscriptionForm = document.getElementById('subscriptionForm');
+subscriptionForm.addEventListener('submit', function(e){
+
+    var errorList = fieldsError.filter( errors => errors.length > 0);
+    if(errorList.length > 0){
+        alert(`Please notice you have the following errors:\n\n* ${errorList.flat().join('\n* ')}`);
+        
+    } else {
+        var dataInputs = '';
+        fieldsArray.forEach(function(field, index){
+            var input = document.getElementById(field);
+            dataInputs += "\n" + input.value;
+        })
+        alert('You registered the following info about yourself:\n'+ dataInputs);
+    }
+    e.preventDefault();
+});
+
+// ---------
+// --BONUS--
+// ---------
+
+var nameInputValue = document.getElementById('fullName');
+
+nameInputValue.addEventListener('keydown', displayHelloMsg);
+nameInputValue.addEventListener('change', hideHelloMsg);
+
+
+function displayHelloMsg(e) {
+    document.getElementById('helloMsg').innerHTML = 'HELLO ' + (e.target.value).toUpperCase() + ' !!';
+}
+
+function hideHelloMsg(e) {
+
+    if (nameInputValue === '') {
+        document.getElementById('helloMsg').innerHTML = ''; 
+    }
+}
