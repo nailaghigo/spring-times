@@ -6,7 +6,7 @@ All titles are linked to a real notice.
 ## Subscription.html
 > You can access this page clicking the 'Subscribe Spring Newsletter' button 
 >at the bottom of index.html:
->___________________________________________________________________________
+>________________________________________________________________________
 >
 > At Subscribe.html you can find a complete form field 
 > to acces to our subscription register  for FREE!
