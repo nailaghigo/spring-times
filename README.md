@@ -3,6 +3,17 @@
 The principal objective of this project is to use flexbox properties, applied to a custom news page, as the only tool to create a full Responsive Design, applying Mobile Firs Concept.
 Design layous is personal, all the news are actual and real.
 All titles are linked to a real notice.
+## Subscription.html
+> You can access this page clicking the following button at the bottom of index.html:
+>
+> ![alt text](\assets\images\button.png)
+> 
+> There you can find a complete form field 
+> to acces to our subscription register  for FREE!
+
+>NOTE:
+>   You can go back to index page just 
+>   clicking Spring Times Title at the header.
 
 - GitHub Pages:
 https://nailaghigo.github.io/spring-times/
