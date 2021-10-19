@@ -280,19 +280,20 @@ subscriptionForm.addEventListener('submit', function(e){
 // --BONUS--
 // ---------
 
-var nameInputValue = document.getElementById('fullName');
-
-nameInputValue.addEventListener('keydown', displayHelloMsg);
-nameInputValue.addEventListener('change', hideHelloMsg);
-
-
 function displayHelloMsg(e) {
-    document.getElementById('helloMsg').innerHTML = 'HELLO ' + (e.target.value).toUpperCase() + ' !!';
+    if (e.target.value !== ''){
+        document.getElementById('helloMsg').innerHTML = 'HELLO ' + (e.target.value).toUpperCase() + ' !!';
+    }
 }
 
 function hideHelloMsg(e) {
 
-    if (nameInputValue === '') {
+    if (e.target.value === '') {
         document.getElementById('helloMsg').innerHTML = ''; 
     }
 }
+var nameInputValue = document.getElementById('fullName');
+
+nameInputValue.addEventListener('keydown', displayHelloMsg);
+nameInputValue.addEventListener('input', hideHelloMsg);
+
