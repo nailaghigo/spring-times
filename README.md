@@ -4,11 +4,11 @@ The principal objective of this project is to use flexbox properties, applied to
 Design layous is personal, all the news are actual and real.
 All titles are linked to a real notice.
 ## Subscription.html
-> You can access this page clicking the following button at the bottom of index.html:
+> You can access this page clicking the 'Subscribe Spring Newsletter' button 
+>at the bottom of index.html:
+>________________________________________________________________________
 >
-> ![alt text](\assets\images\button.png)
-> 
-> There you can find a complete form field 
+> At Subscribe.html you can find a complete form field 
 > to acces to our subscription register  for FREE!
 
 >NOTE:
