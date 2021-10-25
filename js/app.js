@@ -1,6 +1,6 @@
 // REgular Expressions
 const regLettersAndNumbers = /^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]+$/;
-const regAddress = /^(?=.*?\d)(?=.*?[a-zA-Z\s])[a-zA-Z\d\s]+$/;
+const regAddress = /^(?=.*?\d)(?=.*?[A-Za-zÀ-ÿ\s])[A-Za-zÀ-ÿ\d\s]+$/;
 const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 const errorMessages = [
@@ -22,31 +22,29 @@ const errorMessages = [
 
 // General Functions
 function displayError (id, messageId) {
-    var validationMsgDiv = document.getElementById(`${id}Message`);
+    const validationMsgDiv = document.getElementById(`${id}Message`);
     validationMsgDiv.innerHTML = errorMessages[messageId];
-    var input = document.getElementById(id);
+    const input = document.getElementById(id);
     input.classList.add('redInputBorder')
 }
 
 function hideError(id) {
-    var validationMsgDiv = document.getElementById(`${id}Message`);
+    const validationMsgDiv = document.getElementById(`${id}Message`);
     validationMsgDiv.innerHTML = '';
-    var input = document.getElementById(id);
+    const input = document.getElementById(id);
     input.classList.remove('redInputBorder')
 }
 
 // ----------------
 // Name Validation
 // ----------------
-function onBlurFullName (field, id) {
+function onBlurname (field, id) {
     if (field.value.length < 6) {
         displayError(id, 0)
         fieldsError[0].push(errorMessages[0]);
-
     } else if (field.value.indexOf(' ') === -1){
         displayError(id, 1)
         fieldsError[0].push(errorMessages[1]);
-
     } else {
         fieldsError[0] = [];
     }
@@ -55,7 +53,7 @@ function onBlurFullName (field, id) {
 // ------------------
 //  Email Validation
 // ------------------
-var email = document.getElementById('email');
+const email = document.getElementById('email');
 email.addEventListener('keyup', function(){
     email.value = email.value.toLowerCase();
 });
@@ -64,7 +62,6 @@ function onBlurEmail (field, id) {
     if (!regEmail.test(String(field.value).toLowerCase())) {
         displayError(id, 2);
         fieldsError[1].push(errorMessages[2]);
-
     } else {
         fieldsError[1] = [];
     }
@@ -77,11 +74,9 @@ function onBlurPwd (field, id) {
     if (field.value.length < 8) {
         displayError(id, 3);
         fieldsError[2].push(errorMessages[3]);
-
     } else if (!regLettersAndNumbers.test(field.value)){
         displayError(id, 4);
         fieldsError[2].push(errorMessages[4]);
-
     } else {
         fieldsError[2] = [];
     }
@@ -91,11 +86,10 @@ function onBlurPwd (field, id) {
 // Repeat Password Validation
 // ---------------------------
 function onBlurRepeatPwd (field, id) {
-    var pwd = document.getElementById('pwd');
+    const pwd = document.getElementById('pwd');
     if (field.value !== pwd.value) {
         displayError(id, 5)
         fieldsError[3].push(errorMessages[5]);
-
     } else {
         fieldsError[3] = [];
     }
@@ -104,9 +98,8 @@ function onBlurRepeatPwd (field, id) {
 // ---------------
 // Age Validation
 // ---------------
-var age = document.getElementById('age');
+const age = document.getElementById('age');
 age.addEventListener('keydown', function(e){
-
     if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ','  || e.key === 'e'){
         e.preventDefault();
     }
@@ -116,7 +109,6 @@ function onBlurAge (field, id) {
     if (field.value < 18 || field.value > 100){
         displayError(id, 6);
         fieldsError[4].push(errorMessages[6]);
-
     } else {
         fieldsError[4] = [];
     }
@@ -125,9 +117,8 @@ function onBlurAge (field, id) {
 // -----------------
 // Phone Validation
 // -----------------
-var phone = document.getElementById('phone');
+const phone = document.getElementById('phone');
 phone.addEventListener('keydown', function(e){
-
     if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',' || e.key === 'e'){
         e.preventDefault();
     }
@@ -137,7 +128,6 @@ function onBlurPhone (field, id) {
     if(field.value.length < 7){
         displayError(id, 7);
         fieldsError[5].push(errorMessages[7]);
-
     } else {
         fieldsError[5] = [];
     }
@@ -150,15 +140,12 @@ function onBlurAddress (field, id) {
     if (field.value.length < 5){
         displayError(id, 8);
         fieldsError[6].push(errorMessages[8]);
-
     } else if (!regAddress.test(field.value)){
         displayError(id, 9);
         fieldsError[6].push(errorMessages[9]);
-
     } else if (field.value.indexOf(' ') === -1){
         displayError(id, 10);
         fieldsError[6].push(errorMessages[10]);
-
     } else {
         fieldsError[6] = [];
     }
@@ -171,7 +158,6 @@ function onBlurCity (field, id) {
     if (field.value.length < 3){
         displayError(id, 11);
         fieldsError[7].push(errorMessages[11]);
-
     } else {
         fieldsError[7] = [];
     }
@@ -184,7 +170,6 @@ function onBlurPostalCode(field, id){
     if (field.value.length < 3){
         displayError(id, 12);
         fieldsError[8].push(errorMessages[12]);
-
     } else {
         fieldsError[8] = [];
     }
@@ -193,9 +178,8 @@ function onBlurPostalCode(field, id){
 // ---------------------
 // ID Number Validation
 // ---------------------
-var idNumber = document.getElementById('idNumber');
+const idNumber = document.getElementById('idNumber');
 idNumber.addEventListener('keydown', function(e){
-
     if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',' || e.key === 'e'){
         e.preventDefault();
     }
@@ -205,7 +189,6 @@ function onBlurIdNumber (field, id) {
         field.value.length > 8){
         displayError(id, 13);
         fieldsError[9].push(errorMessages[13]);
-
     } else {
         fieldsError[9] = [];
     }
@@ -215,7 +198,7 @@ function onBlurIdNumber (field, id) {
 // Fields List
 // ------------
 const fieldsArray = [
-    'fullName',
+    'name',
     'email',
     'pwd',
     'repeatPwd',
@@ -228,7 +211,7 @@ const fieldsArray = [
 ]
 
 const fieldsBlurActions = [
-    onBlurFullName,
+    onBlurname,
     onBlurEmail,
     onBlurPwd,
     onBlurRepeatPwd,
@@ -243,7 +226,7 @@ const fieldsBlurActions = [
 const fieldsError = [];
 
 fieldsArray.forEach(function (fieldId, index) {
-    var field = document.getElementById(fieldId);
+    const field = document.getElementById(fieldId);
     field.addEventListener('blur', function () {
         fieldsBlurActions[index](field, fieldId);
     });
@@ -254,27 +237,6 @@ fieldsArray.forEach(function (fieldId, index) {
 
     fieldsError.push([]);
 })
-
-// -------
-// Submit
-// -------
-var subscriptionForm = document.getElementById('subscriptionForm');
-subscriptionForm.addEventListener('submit', function(e){
-
-    var errorList = fieldsError.filter( errors => errors.length > 0);
-    if(errorList.length > 0){
-        alert(`Please notice you have the following errors:\n\n* ${errorList.flat().join('\n* ')}`);
-        
-    } else {
-        var dataInputs = '';
-        fieldsArray.forEach(function(field, index){
-            var input = document.getElementById(field);
-            dataInputs += "\n" + input.value;
-        })
-        alert('You registered the following info about yourself:\n'+ dataInputs);
-    }
-    e.preventDefault();
-});
 
 // ---------
 // --BONUS--
@@ -287,13 +249,110 @@ function displayHelloMsg(e) {
 }
 
 function hideHelloMsg(e) {
-
     if (e.target.value === '') {
         document.getElementById('helloMsg').innerHTML = ''; 
     }
 }
-var nameInputValue = document.getElementById('fullName');
 
-nameInputValue.addEventListener('keydown', displayHelloMsg);
+const nameInputValue = document.getElementById('name');
+nameInputValue.addEventListener('keyup', displayHelloMsg);
 nameInputValue.addEventListener('input', hideHelloMsg);
 
+// -------
+// Submit
+// -------
+const modal = document.getElementById('modalMessage');
+const modalTitle = document.getElementById('modalTitle');
+const modalText = document.getElementById('modalText');
+const modalBttn = document.getElementById('modalBttn');
+modalBttn.addEventListener('click', function(){
+    modal.classList.remove('showModal');
+})
+
+
+function onSubmit() {
+    const name = document.getElementById(fieldsArray[0]);
+    const email = document.getElementById(fieldsArray[1]);
+    const pwd = document.getElementById(fieldsArray[2]);
+    const age = document.getElementById(fieldsArray[4]);
+    const phone = document.getElementById(fieldsArray[5]);
+    const address = document.getElementById(fieldsArray[6]);
+    const city = document.getElementById(fieldsArray[7]);
+    const postalCode = document.getElementById(fieldsArray[8]);
+    const idNumber = document.getElementById(fieldsArray[9]);
+
+    const url = `http://curso-dev-2021.herokuapp.com/newsletter?`;
+    const urlValues = `name=${name.value}&emaill=${email.value}&pwd=${pwd.value}&age=${age.value}&phone=${phone.value}&address=${address.value}&city=${city.value}&postalCode=${postalCode.value}&idNumber=${idNumber.value}`
+
+    fetch(`${url}${urlValues}`)
+        .then(response => {
+            debugger
+            return response.json()
+        })
+
+        .then(data => {
+            console.log(data)
+            modal.classList.add('showModal');
+            modalTitle.innerHTML = 'Message sent succesfully!';
+            modalText.innerHTML = 'You registed the following info: <br><br>';
+            modalText.innerHTML += `<strong>Full Name:</strong> ${data.name} <br>`;
+            modalText.innerHTML += `<strong>Email:</strong> ${data.email} <br>`;
+            modalText.innerHTML += `<strong>Age:</strong> ${data.age} <br>`;
+            modalText.innerHTML += `<strong>Phone:</strong> ${data.phone} <br>`;
+            modalText.innerHTML += `<strong>Address:</strong> ${data.address} <br>`;
+            modalText.innerHTML += `<strong>City:</strong> ${data.city} <br>`;
+            modalText.innerHTML += `<strong>Postal Code:</strong> ${data.postalCode} <br>`;
+            modalText.innerHTML += `<strong>ID Number:</strong> ${data.idNumber} <br>`;
+            
+            // save at localStorage
+            for (const property in data) {
+                localStorage.setItem(property, data[property]);
+            }
+        })
+        .catch(error => {
+           console.log(error)
+           modal.classList.add('showModal');
+           modalTitle.innerHTML = 'OOPS! There was an error on your form';
+           modalText.innerHTML = error;
+        });
+}
+
+const subscriptionForm = document.getElementById('subscriptionForm');
+subscriptionForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const errorList = fieldsError.filter( errors => errors.length > 0);
+    if(errorList.length > 0){
+        modal.classList.add('showModal');
+        modalTitle.innerHTML = `OOPS! It seems that you have the following errors:`;
+        modalText.innerHTML = `* ${errorList.join('<br>* ')}`;
+
+    } else {
+        let emptyValue = false;
+        fieldsArray.forEach(function(field){
+            const input = document.getElementById(field);
+            if (input.value === '') {
+                emptyValue = true;
+            }
+        });
+        if (emptyValue) {
+            modal.classList.add('showModal');
+            modalTitle.innerHTML = `OOPS!`;
+            modalText.innerHTML = `* All fields are required. Please complete them.`;
+        }else {
+            onSubmit();
+        }
+    }
+});
+
+// Getting LocalStorage Information
+
+function getLsInfo() {
+    fieldsArray.forEach(function(field){
+        if(localStorage.getItem(field) !== null ){
+            const input = document.getElementById(field);
+            input.value = localStorage.getItem(field);
+        }
+    });
+}
+
+getLsInfo();

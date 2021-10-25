@@ -61,6 +61,7 @@ button {
     font-size: 12px;
     background-color: #266fef;
     color: #ffffff;
+    cursor: pointer;
 }
 
 a {
@@ -363,6 +364,7 @@ nav .menuBtn {
     color: white;
     font-size: 14px;
     background-color: #266fef;
+    cursor: pointer;
 }
 
 .adv.square {

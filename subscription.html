@@ -79,7 +79,7 @@
             </nav>
         </header>
         <!-- Subscription Form -->
-        <section>
+        <section class="subscrptionSection">
             <div class="subscriptionContainer">
                 <h2 class="title">Subscribe to our Newsletter for FREE!</h2>
                 <form class="subscriptionWrapper" id="subscriptionForm">
@@ -87,9 +87,9 @@
                     <div class="helloMsg" id="helloMsg"></div>
                     <!-- First and Last Name -->
                     <div class="inputBlock">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" name="fullName" id="fullName" value="" placeholder="John Doritos">
-                        <div class="validationMessage" id="fullNameMessage"></div>
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" value="" placeholder="John Doritos">
+                        <div class="validationMessage" id="nameMessage"></div>
                     </div>
                     <!-- Email -->
                     <div class="inputBlock">
@@ -150,6 +150,13 @@
                         <button type="submit">Submit</button>
                     </div>
                 </form>
+                <div class="modalMessage" id="modalMessage">
+                    <div class="modalBox">
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalText"></p>
+                        <button id="modalBttn">Close</button>
+                    </div>
+                </div>
             </div>
         </section>
         <footer>
