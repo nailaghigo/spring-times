@@ -281,7 +281,7 @@ function onSubmit() {
     const postalCode = document.getElementById(fieldsArray[8]);
     const idNumber = document.getElementById(fieldsArray[9]);
 
-    const url = `http://curso-dev-2021.herokuapp.com/newsletter?`;
+    const url = `https://curso-dev-2021.herokuapp.com/newsletter?`;
     const urlValues = `name=${name.value}&emaill=${email.value}&pwd=${pwd.value}&age=${age.value}&phone=${phone.value}&address=${address.value}&city=${city.value}&postalCode=${postalCode.value}&idNumber=${idNumber.value}`
 
     fetch(`${url}${urlValues}`)
@@ -356,3 +356,5 @@ function getLsInfo() {
 }
 
 getLsInfo();
+// Crear las funciones que manejan el éxito y fracaso del envío de datos.
+// En el evento onload del objeto window, revisar si hay datos guardados en LocalStorage y utilizar dichos datos para cargar valores predeterminados al formulario.
