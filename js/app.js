@@ -269,6 +269,34 @@ modalBttn.addEventListener('click', function(){
     modal.classList.remove('showModal');
 })
 
+// FETCH
+// -Show modal
+
+function showSuccessMsg(data) {
+    modal.classList.add('showModal');
+    modalTitle.innerHTML = 'Message sent succesfully!';
+    modalText.innerHTML = 'You registed the following info: <br><br>';
+    modalText.innerHTML += `<strong>Full Name:</strong> ${data.name} <br>`;
+    modalText.innerHTML += `<strong>Email:</strong> ${data.email} <br>`;
+    modalText.innerHTML += `<strong>Age:</strong> ${data.age} <br>`;
+    modalText.innerHTML += `<strong>Phone:</strong> ${data.phone} <br>`;
+    modalText.innerHTML += `<strong>Address:</strong> ${data.address} <br>`;
+    modalText.innerHTML += `<strong>City:</strong> ${data.city} <br>`;
+    modalText.innerHTML += `<strong>Postal Code:</strong> ${data.postalCode} <br>`;
+    modalText.innerHTML += `<strong>ID Number:</strong> ${data.idNumber} <br>`;
+    
+    // save at localStorage
+    for (const property in data) {
+        localStorage.setItem(property, data[property]);
+    }
+}
+
+function showErrorMsg(error) {
+    modal.classList.add('showModal');
+    modalTitle.innerHTML = 'OOPS! There was an error on your form';
+    console.log(error);
+    modalText.innerHTML = error;
+}
 
 function onSubmit() {
     const name = document.getElementById(fieldsArray[0]);
@@ -282,38 +310,29 @@ function onSubmit() {
     const idNumber = document.getElementById(fieldsArray[9]);
 
     const url = `https://curso-dev-2021.herokuapp.com/newsletter?`;
-    const urlValues = `name=${name.value}&emaill=${email.value}&pwd=${pwd.value}&age=${age.value}&phone=${phone.value}&address=${address.value}&city=${city.value}&postalCode=${postalCode.value}&idNumber=${idNumber.value}`
+    const urlValues = `name=${name.value}&email=${email.value}&pwd=${pwd.value}&age=${age.value}&phone=${phone.value}&address=${address.value}&city=${city.value}&postalCode=${postalCode.value}&idNumber=${idNumber.value}`
 
     fetch(`${url}${urlValues}`)
         .then(response => {
-            debugger
-            return response.json()
+            if (response.status === 200) {
+                return response.json()
+            } else {
+                response.text()
+                .then(msg => {
+                    showErrorMsg(msg);
+                    console.log('Error: ' + msg);
+                    // throw new Error(msg)
+                })
+            }
         })
 
         .then(data => {
             console.log(data)
-            modal.classList.add('showModal');
-            modalTitle.innerHTML = 'Message sent succesfully!';
-            modalText.innerHTML = 'You registed the following info: <br><br>';
-            modalText.innerHTML += `<strong>Full Name:</strong> ${data.name} <br>`;
-            modalText.innerHTML += `<strong>Email:</strong> ${data.email} <br>`;
-            modalText.innerHTML += `<strong>Age:</strong> ${data.age} <br>`;
-            modalText.innerHTML += `<strong>Phone:</strong> ${data.phone} <br>`;
-            modalText.innerHTML += `<strong>Address:</strong> ${data.address} <br>`;
-            modalText.innerHTML += `<strong>City:</strong> ${data.city} <br>`;
-            modalText.innerHTML += `<strong>Postal Code:</strong> ${data.postalCode} <br>`;
-            modalText.innerHTML += `<strong>ID Number:</strong> ${data.idNumber} <br>`;
-            
-            // save at localStorage
-            for (const property in data) {
-                localStorage.setItem(property, data[property]);
-            }
+            showSuccessMsg(data);
         })
+
         .catch(error => {
-           console.log(error)
-           modal.classList.add('showModal');
-           modalTitle.innerHTML = 'OOPS! There was an error on your form';
-           modalText.innerHTML = error;
+           console.error('catch', error)
         });
 }
 
@@ -345,16 +364,11 @@ subscriptionForm.addEventListener('submit', function(e){
 });
 
 // Getting LocalStorage Information
-
-function getLsInfo() {
+window.onload = function getLsInfo() {
     fieldsArray.forEach(function(field){
-        if(localStorage.getItem(field) !== null ){
+        if(localStorage.getItem(field) !== null){
             const input = document.getElementById(field);
             input.value = localStorage.getItem(field);
         }
     });
 }
-
-getLsInfo();
-// Crear las funciones que manejan el éxito y fracaso del envío de datos.
-// En el evento onload del objeto window, revisar si hay datos guardados en LocalStorage y utilizar dichos datos para cargar valores predeterminados al formulario.
